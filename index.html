@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Mesto</title>
+    <link rel="stylesheet" href="./pages/index.css" />
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+  </head>
+  <body>
+    <a href="#" class="back-to-top"></a>
+    <div class="root">
+      
+      <header class="header root__section">
+        <img src='./images/logo.svg'alt=""class="logo"/>
+      </header>
+      <div class="profile root__section">
+        <div class="user-info">
+          <div class="user-info__photo"></div>
+          <div class="user-info__data">
+            <h1 class="user-info__name"></h1>
+            <p class="user-info__job"></p>
+           <button class="button profile__edit-button">Edit</button>
+           </div>
+          <button class="button user-info__button">+</button>
+        </div>
+      </div>
+      <div class="places-list root__section"></div>
+      
+      <div class="popup" id='popup_new'>
+        <div class="popup__content">
+          <img src='./images/close.svg' alt=""class="popup__close"/>
+          <h3 class="popup__title">Новое место</h3>
+          <form class="popup__form" name="new" novalidate>
+            <input type="text" name="name" id="mesto" minlength="2" maxlength="30" class="popup__input" placeholder="Название" required/>
+            <span id="error-mesto" class="error-message"></span>
+            <input type="url" name="link" id="link" class="popup__input popup__input_type_link-url" placeholder="Ссылка на картинку" required/>
+            <span id="error-link" class="error-message"></span>
+            <button type="submit" class="button popup__button save__card">+</button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="popup" id="popup_avatar">
+        <div class="popup__content">
+          <img src='./images/close.svg' alt="" class="popup__close"/>
+          <h3 class="popup__title">Обновить аватар</h3>
+          <form class="popup__form" name="avatar" novalidate>
+            <input type="url" name="link" id="avatar"  class="popup__input popup__input_type_link-url" placeholder="Ссылка на аватар" required/>
+            <span id="error-avatar" class="error-message"></span>
+            <button type="submit" class="button popup__button">Сохранить</button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="popup"  id='popup_edit'>
+        <div class="popup__content">
+          <img src='./images/close.svg' alt="" class="popup__close"/>
+          <h3 class="popup__title">Редактировать профиль</h3>
+          <form class="popup__form" name="formProfile" novalidate>
+            <input type="text" id="user"  name="user" minlength="2" maxlength="30"
+              class="popup__input popup__input_type_username" placeholder="Имя" required/>
+            <span id="error-user" class="error-message"></span>
+             <input type="text" name="job" id="job" minlength="2" maxlength="30" class="popup__input" placeholder="О себе" required/>
+            <span id="error-job" class="error-message"></span>
+            <button type="submit" class=" button popup__button save ">Сохранить </button>
+          </form>
+        </div>
+      </div>
+      <div class="popup" id='img_img'>
+        <div class="popup__image-container">
+          <img src="" alt="" class="popup__image" />
+          <img
+            src='./images/close.svg';
+            alt=""
+            class="popup__close popup__close_type_image"
+          />
+        </div>
+      </div>
+     
+    </div>
+   <script src="./scripts/API.js"></script>
+      <script src="./scripts/main.js" defer></script>
+    <script src="./scripts/Card.js"></script>
+    <script src="./scripts/CardList.js"></script>
+    <script src="./scripts/Popup.js"></script>
+     <script src="./scripts/UserInfo.js"></script> 
+     <script src="./scripts/ValidityForm.js"></script>
+   
+   
+   
+   
+     <!--Для проверки -->
+<style type="text/css">#hellopreloader_preload{display: block;position: fixed;z-index: 99999;top: 0;left: 0;
+  width: 100%;height: 100%;min-width: 1000px;background: #000000 url('./images/rings.svg')  center center no-repeat;background-size:151px; opacity: 0.6;}</style>
+<div id="hellopreloader"><div id="hellopreloader_preload"></div></div>
+<script type="text/javascript">var hellopreloader = document.getElementById("hellopreloader_preload");
+function fadeOutnojquery(el){el.style.opacity = 1;var interhellopreloader = setInterval(function(){el.style.opacity = el.style.opacity - 0.05;if (el.style.opacity <=0.05)
+{ clearInterval(interhellopreloader);hellopreloader.style.display = "none";}},16);}
+window.onload = function(){setTimeout(function(){fadeOutnojquery(hellopreloader);},4008);};</script>
+
+  </body>
+</html>

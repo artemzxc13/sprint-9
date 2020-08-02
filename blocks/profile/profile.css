@@ -1,0 +1,6 @@
+@import url('./__submit/profile__submit.css');
+.profile {
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+}
